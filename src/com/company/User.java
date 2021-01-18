@@ -1,56 +1,29 @@
 package com.company;
 
-public class User {
-    private int id;
-    private String name;
-    private String surname;
-    private double gpa;
+public class User extends Person {
 
-    public User() {
+    private String email;
 
+    public User(String name, String surname) {
+        super(name, surname);
     }
 
-    public User(int id, String name, String surname, double gpa) {
-        setId(id);
-        setName(name);
-        setSurname(surname);
-        setGpa(gpa);
+    public String getEmail() {
+        return email;
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getSurname() {
-        return surname;
-    }
-
-    public void setSurname(String surname) {
-        this.surname = surname;
-    }
-
-    public double getGpa() {
-        return gpa;
-    }
-
-    public void setGpa(double gpa) {
-        this.gpa = gpa;
+    public void setEmail(String email) {
+        if (Validator.checkEmail(email)) {
+            this.email = email;
+        } else {
+            System.out.println("Wrong email!");
+        }
     }
 
     @Override
     public String toString() {
-        return id + ": " + name + " " + surname + ", with GPA " + gpa;
+        return "User{" + getName() + " " + getSurname() + ", " +
+                "email='" + email + '\'' +
+                '}';
     }
 }

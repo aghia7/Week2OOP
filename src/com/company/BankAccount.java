@@ -3,6 +3,14 @@ package com.company;
 public class BankAccount {
     private int cents;
 
+    public BankAccount() {
+
+    }
+
+    public BankAccount(int dollars) {
+        deposit(dollars);
+    }
+
     public void deposit(int dollars) {
         cents += dollars * 100;
     }

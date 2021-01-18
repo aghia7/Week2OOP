@@ -2,28 +2,14 @@ package com.company;
 
 import java.util.ArrayList;
 
-public class Group {
-    private int id;
+public class Group  {
     private String name;
-    private ArrayList<User> users;
+    private ArrayList<Student> students = new ArrayList<>();
 
-    public Group() {
-        users = new ArrayList<>();
-    }
-
-    public Group(int id, String name) {
-        this();
-        setId(id);
+    public Group(String name) {
         setName(name);
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public String getName() {
         return name;
@@ -33,30 +19,16 @@ public class Group {
         this.name = name;
     }
 
-    public void addUser(User user) {
-        users.add(user);
+    public void enrollStudent(Student student) {
+        students.add(student);
     }
 
-    public User removeUser(int id) {
-        int i = 0;
-        for (User user : users) {
-            if (user.getId() == id) {
-                users.remove(i);
-                return user;
-            }
-            i++;
-        }
-
-
-        return null;
+    public ArrayList<Student> getStudents() {
+        return students;
     }
 
     @Override
     public String toString() {
-        return "Group{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", users=" + users +
-                '}';
+        return name + " : students = " + students;
     }
 }
