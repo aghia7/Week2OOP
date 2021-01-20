@@ -21,6 +21,7 @@ public class Main {
         LocalDate birthDate = LocalDate.parse(date, DateTimeFormatter.ofPattern("dd/MM/yyyy"));
         LocalDate currentDate = LocalDate.now();
 
+        //Found this perfect solution - check it!
         int years = Period.between(birthDate, currentDate).getYears();
 
         System.out.println(years);
