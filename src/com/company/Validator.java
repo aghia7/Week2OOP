@@ -22,6 +22,13 @@ public class Validator {
         return true;
     }
 
+    public static boolean checkDate(String date) {
+
+        // some awesome code goes here
+
+        return true;
+    }
+
     private static boolean correctDomain(String domain) {
         if (domain == null) return false;
         if (domain.length() < 4) return false;
