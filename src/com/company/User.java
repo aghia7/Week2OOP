@@ -10,7 +10,7 @@ import java.util.Date;
 public class User extends Person {
 
     private String email;
-    private String birthday;
+    private MDate birthday;
 
     public User(String name, String surname) {
         super(name, surname);
@@ -31,7 +31,7 @@ public class User extends Person {
     public void setBirthday(String birthday) {
         LocalDate today = LocalDate.now();
         if (Validator.checkDate(birthday)) {
-            this.birthday = birthday;
+            this.birthday = new MDate(birthday);
         } else {
             System.out.println("Incorrect date");
         }

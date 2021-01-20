@@ -17,7 +17,7 @@ public class Main {
         Scanner sc = new Scanner(System.in);
 
         MDate date = new MDate();
-        MDate birthday = new MDate("20/01/2015");
+        MDate birthday = new MDate("14/01/1993");
 
         int years = birthday.getYearsBetween(date);
 
