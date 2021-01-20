@@ -22,6 +22,7 @@ public class Main {
         LocalDate currentDate = LocalDate.now();
 
         //Found this perfect solution - check it!
+        //Without using self-defined MDate
         int years = Period.between(birthDate, currentDate).getYears();
 
         System.out.println(years);
