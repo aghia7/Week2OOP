@@ -95,18 +95,6 @@ public class MDate {
         return -1;
     }
 
-    public int getDaysBetween(MDate date) {
-        int days = 0;
-        for (int i = year; i <= date.year; i++) {
-            days += 365;
-            if (isLeapYear(year)) {
-                days ++;
-            }
-        }
-
-        return date.day - day;
-    }
-
     private boolean isLeapYear(int year) {
         return ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0);
     }
