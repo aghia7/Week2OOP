@@ -6,6 +6,7 @@ import java.io.FileNotFoundException;
 import java.text.DateFormat;
 import java.time.Duration;
 import java.time.LocalDate;
+import java.time.Period;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Date;
@@ -15,12 +16,12 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        String date = sc.next();
 
-        MDate date = new MDate();
-        MDate birthday = new MDate("14/01/1993");
+        LocalDate birthDate = LocalDate.parse(date, DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+        LocalDate currentDate = LocalDate.now();
 
-        int years = birthday.getYearsBetween(date);
-
+        int years = Period.between(birthDate, currentDate).getYears();
 
         System.out.println(years);
 
